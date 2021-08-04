@@ -30,8 +30,10 @@ Run() {
 #		./os2version_reviser.sh
 	}
 	Install() { cp ./*.ttf ~/.fonts; }
-	Download
-	Build
+	Check() { fc-list | grep Ricty; }
+	time Download
+	time Build
 	Install
+	Check
 }
 Run "$@"
